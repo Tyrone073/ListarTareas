@@ -1,0 +1,58 @@
+package main.java.com.tyrone.ListarTareasPorConsola.controller;
+
+import main.java.com.tyrone.ListarTareasPorConsola.model.Tarea;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TareaController {
+   private List<Tarea> tareas = new ArrayList<>();
+
+
+   public void mostrarTareas() {
+      System.out.println("=== Lista de Tareas ===");
+      if (tareas.isEmpty()) {
+         System.out.println("No hay tareas para mostrar.");
+      } else {
+         for (int i = 0; i < tareas.size(); i++) {
+            Tarea t = tareas.get(i);
+            System.out.println(i + ". " + t.getNombre() + " | " + (t.getEstado() ? "Completada" : "Pendiente"));
+         }
+      }
+   }
+
+   public void agregarTarea(Tarea tarea) {
+      tareas.add(tarea);
+   }
+
+   public Tarea buscarTareaPorId(long id) {
+      for (Tarea t : tareas) {
+         if (t.getId() == id) {
+            return t;
+         }
+      }
+      System.out.println("Su tarea no existe");
+      return null;
+   }
+
+   public boolean actualizarEstado(long id, boolean nuevoEstado) {
+      for (Tarea t : tareas) {
+         if (t.getId() == id) {
+            t.setEstado(nuevoEstado);
+            return true; // éxito
+         }
+      }
+      System.out.println("El estado de su tarea se actualizo con exito");
+      return false; // no se encontró la tarea
+   }
+
+   public boolean borrarTarea(long id) {
+      for (int i = 0; i < tareas.size(); i++) {
+         if (tareas.get(i).getId() == id) {
+            tareas.remove(i);
+            return true;
+         }
+      }
+      return false;
+   }
+}
