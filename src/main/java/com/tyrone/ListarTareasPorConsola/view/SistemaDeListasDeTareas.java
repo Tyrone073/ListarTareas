@@ -35,21 +35,27 @@ public class SistemaDeListasDeTareas {
                 tareaController.agregarTarea(nuevatarea);
 
             } else if (opcion == 2) {
-                System.out.print("Seleccione que tarea desea macar como completada: ");
+                System.out.print("Seleccione que tarea desea macar como completada:");
                 tareaController.mostrarTareas();
-                idTarea = scanner.nextLong();
-                System.out.println("Usted acab de seleccioan la tarea: " + tareaController.buscarTareaPorId(idTarea));
-                System.out.println("Escriba 'false' si desea actalizar a pendiente  o 'true' si desea macarla como completada");
-                boolean estado = scanner.nextBoolean();
-                tareaController.actualizarEstado(idTarea, estado);
+                if (tareaController.isEmpty()){
+                    System.out.println("Agrege una tarea");
+                }else {
+                    System.out.println("Escriba el indice de la tarea: ");
+                    idTarea = scanner.nextLong();
+                    tareaController.actualizarEstado(idTarea);
+                    System.out.println("Se acaba de marcar como completa la tarea: \n" + tareaController.buscarTareaPorId(idTarea));
+                }
+
             }else if (opcion == 3) {
                 System.out.print("Seleccione que tarea desea eliminar: ");
                 tareaController.mostrarTareas();
-                System.out.println("Escriba el indice de la tarea");
-                idTarea = scanner.nextLong();
-                System.out.println("Usted acaba de seleccioar la tarea: \n" + tareaController.buscarTareaPorId(idTarea));
-                tareaController.borrarTarea(idTarea);
-
+                if (tareaController.isEmpty()){
+                    System.out.println("Agrege una tarea");
+                }else {
+                    System.out.println("Escriba el indice de la tarea");
+                    idTarea = scanner.nextLong();
+                    tareaController.borrarTarea(idTarea);
+                }
             }else if (opcion == 4) {
                 tareaController.mostrarTareas();
             }

@@ -10,7 +10,8 @@ public class TareaController {
 
 
    public void mostrarTareas() {
-      System.out.println("=== Lista de Tareas ===");
+      System.out.println("\n=== Lista de Tareas ===");
+      System.out.println("Indice|   Nombre  |   Tipo  |   Descripcion");
       if (tareas.isEmpty()) {
          System.out.println("No hay tareas para mostrar.");
       } else {
@@ -23,6 +24,7 @@ public class TareaController {
 
    public void agregarTarea(Tarea tarea) {
       tareas.add(tarea);
+      System.out.println("Tarea agregada con exito."+ tarea);
    }
 
    public Tarea buscarTareaPorId(long id) {
@@ -35,15 +37,17 @@ public class TareaController {
       return null;
    }
 
-   public boolean actualizarEstado(long id, boolean nuevoEstado) {
+   public boolean actualizarEstado(long id/*, boolean nuevoEstado*/) {
       for (Tarea t : tareas) {
          if (t.getId() == id) {
-            t.setEstado(nuevoEstado);
+//            t.setEstado(nuevoEstado);
+            t.setEstado(true);
             System.out.println("El estado de su tarea se actualizo con exito");
             return true; // éxito
+         }else {
+            System.out.println("Su tarea no existe");
          }
       }
-
       return false; // no se encontró la tarea
    }
 
@@ -51,9 +55,15 @@ public class TareaController {
       for (int i = 0; i < tareas.size(); i++) {
          if (tareas.get(i).getId() == id) {
             tareas.remove(i);
+            System.out.println("Tarea eliminada con exito");
             return true;
          }
       }
+      System.out.println("Indice invalido");
       return false;
+   }
+
+   public boolean isEmpty() {
+      return tareas.isEmpty();
    }
 }
