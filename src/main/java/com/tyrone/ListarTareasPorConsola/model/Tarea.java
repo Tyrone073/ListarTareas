@@ -2,14 +2,14 @@ package main.java.com.tyrone.ListarTareasPorConsola.model;
 
 public class Tarea {
 
-    // Atributos y estan con el tipo private para q no se pueda ocupar en otras clase y sirvan los metodos getter y setter
+    // Atributos y estan con el tipo private para ocultarlas en otras clase y sirvan los metodos getter y setter
     private static long contador = 1;
     private Long id;
     private String nombre;
     private boolean estado;
     private String descripcion;
 
-    // Constructor que solo recibira el nombre de la tarea
+    // Constructor recibira los datos de tarea
     public Tarea(String nombre, String descripcion) {
         this.id = contador++;
         this.nombre = nombre;

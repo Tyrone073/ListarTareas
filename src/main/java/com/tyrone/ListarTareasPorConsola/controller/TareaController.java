@@ -16,7 +16,7 @@ public class TareaController {
       } else {
          for (int i = 0; i < tareas.size(); i++) {
             Tarea t = tareas.get(i);
-            System.out.println(i + ". " + t.getNombre() + " | " + (t.getEstado() ? "Completada" : "Pendiente"));
+            System.out.println(t.getId() + ". " + t.getNombre() + " | " + t.getDescripcion() +" | " + (t.getEstado() ? "Completada" : "Pendiente"));
          }
       }
    }
@@ -39,10 +39,11 @@ public class TareaController {
       for (Tarea t : tareas) {
          if (t.getId() == id) {
             t.setEstado(nuevoEstado);
+            System.out.println("El estado de su tarea se actualizo con exito");
             return true; // éxito
          }
       }
-      System.out.println("El estado de su tarea se actualizo con exito");
+
       return false; // no se encontró la tarea
    }
 

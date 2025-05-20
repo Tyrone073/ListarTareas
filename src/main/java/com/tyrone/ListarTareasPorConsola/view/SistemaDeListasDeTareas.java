@@ -7,13 +7,13 @@ import java.util.Scanner;
 
 public class SistemaDeListasDeTareas {
 
-    private TareaController tareaController;
-    private Tarea tarea;
-    private Scanner scanner;
+    private TareaController tareaController = new TareaController();
+    private Scanner scanner= new Scanner(System.in);
 
     public void ejecutar() {
         int opcion;
         Long idTarea;
+
 
         do {
             System.out.println("\n1. Agregar tarea");
@@ -38,12 +38,22 @@ public class SistemaDeListasDeTareas {
                 System.out.print("Seleccione que tarea desea macar como completada: ");
                 tareaController.mostrarTareas();
                 idTarea = scanner.nextLong();
-                tareaController.buscarTareaPorId(idTarea);
+                System.out.println("Usted acab de seleccioan la tarea: " + tareaController.buscarTareaPorId(idTarea));
                 System.out.println("Escriba 'false' si desea actalizar a pendiente  o 'true' si desea macarla como completada");
-                boolean completada = scanner.nextBoolean();
-                tareaController.actualizarEstado(idTarea, completada);
+                boolean estado = scanner.nextBoolean();
+                tareaController.actualizarEstado(idTarea, estado);
+            }else if (opcion == 3) {
+                System.out.print("Seleccione que tarea desea eliminar: ");
+                tareaController.mostrarTareas();
+                System.out.println("Escriba el indice de la tarea");
+                idTarea = scanner.nextLong();
+                System.out.println("Usted acaba de seleccioar la tarea: \n" + tareaController.buscarTareaPorId(idTarea));
+                tareaController.borrarTarea(idTarea);
+
+            }else if (opcion == 4) {
+                tareaController.mostrarTareas();
             }
-        }
+        }while (opcion != 0);
     }
 
 
