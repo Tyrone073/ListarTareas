@@ -5,7 +5,7 @@ import main.java.com.tyrone.ListarTareasPorConsola.model.Tarea;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TareaController {
+public class ListaTareas {
    private List<Tarea> tareas = new ArrayList<>();
 
 

@@ -1,13 +1,13 @@
 package main.java.com.tyrone.ListarTareasPorConsola.view;
 
-import main.java.com.tyrone.ListarTareasPorConsola.controller.TareaController;
+import main.java.com.tyrone.ListarTareasPorConsola.controller.ListaTareas;
 import main.java.com.tyrone.ListarTareasPorConsola.model.Tarea;
 
 import java.util.Scanner;
 
 public class SistemaDeListasDeTareas {
 
-    private TareaController tareaController = new TareaController();
+    private ListaTareas listaTareas = new ListaTareas();
     private Scanner scanner= new Scanner(System.in);
 
     public void ejecutar() {
@@ -32,32 +32,32 @@ public class SistemaDeListasDeTareas {
                 System.out.print("Descripcion: ");
                 String descripcion = scanner.nextLine();
                 Tarea nuevatarea = new Tarea(nombre, descripcion);
-                tareaController.agregarTarea(nuevatarea);
+                listaTareas.agregarTarea(nuevatarea);
 
             } else if (opcion == 2) {
                 System.out.print("Seleccione que tarea desea macar como completada:");
-                tareaController.mostrarTareas();
-                if (tareaController.isEmpty()){
+                listaTareas.mostrarTareas();
+                if (listaTareas.isEmpty()){
                     System.out.println("Agrege una tarea");
                 }else {
                     System.out.println("Escriba el indice de la tarea: ");
                     idTarea = scanner.nextLong();
-                    tareaController.actualizarEstado(idTarea);
-                    System.out.println("Se acaba de marcar como completa la tarea: \n" + tareaController.buscarTareaPorId(idTarea));
+                    listaTareas.actualizarEstado(idTarea);
+                    System.out.println("Se acaba de marcar como completa la tarea: \n" + listaTareas.buscarTareaPorId(idTarea));
                 }
 
             }else if (opcion == 3) {
                 System.out.print("Seleccione que tarea desea eliminar: ");
-                tareaController.mostrarTareas();
-                if (tareaController.isEmpty()){
+                listaTareas.mostrarTareas();
+                if (listaTareas.isEmpty()){
                     System.out.println("Agrege una tarea");
                 }else {
                     System.out.println("Escriba el indice de la tarea");
                     idTarea = scanner.nextLong();
-                    tareaController.borrarTarea(idTarea);
+                    listaTareas.borrarTarea(idTarea);
                 }
             }else if (opcion == 4) {
-                tareaController.mostrarTareas();
+                listaTareas.mostrarTareas();
             }
         }while (opcion != 0);
     }
