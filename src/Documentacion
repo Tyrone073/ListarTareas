@@ -3,8 +3,8 @@
  * =====================================
  * 
  * Estructura del Proyecto (MVC):
- * -----------------------------
- *ListaTareas/                   - Carpeta raíz del proyecto
+ * ------------------------------
+ * ListaTareas/                    - Carpeta raíz del proyecto
  * └── src/
  *     └── main/
  *         └── java/
@@ -12,38 +12,42 @@
  *                 └── tyrone/
  *                     └── ListarTareasPorConsola/
  *                         ├── model/
- *                         │   └── Tarea.java               - Clase modelo que representa una tarea individual
+ *                         │   └── Tarea.java                 - Clase modelo que representa una tarea individual
  *                         ├── view/
- *                         │   └── VistaConsolaSLT.java     - Maneja la interacción con el usuario por consola
+ *                         │   └── VistaConsolaSLT.java       - Maneja la interacción con el usuario por consola
  *                         ├── controller/
- *                         │   └── TareaController.java     - Gestiona la lógica entre el modelo y la vista
- *                         └── Main.java                    - Punto de entrada de la aplicación
+ *                         │   └── ListaTareas.java           - Gestiona la lógica entre el modelo y la vista
+ *                         └── Main.java                      - Punto de entrada de la aplicación
  *
- *
- * 
  * Patrón de Diseño:
- * ----------------
+ * -----------------
  * Este proyecto implementa el patrón MVC (Model-View-Controller):
  * - Model (Tarea.java): Representa los datos y la lógica de negocio
- * - View (ConsoleView): Maneja la interfaz con el usuario por consola
- * - Controller: Coordina las operaciones entre el modelo y la vista
- * 
+ * - view (VistaConsolaSLT.java): Maneja la interacción por consola con el usuario
+ * - controller (ListaTareas.java): Coordina las operaciones entre el modelo y la vista
+ *
  * Funcionalidades Principales:
- * --------------------------
+ * ----------------------------
  * - Crear nuevas tareas con nombre y descripción
  * - Listar todas las tareas existentes
- * - Marcar tareas como completadas/pendientes
+ * - Marcar tareas como completadas o pendientes
  * - Identificación única de tareas mediante ID autoincremental
- * 
+ *
  * Tecnologías y Versiones:
- * ----------------------
+ * ------------------------
  * - Java SDK: 22
- * - Tipo de Proyecto: Aplicación de Consola
+ * - Tipo de Proyecto: Aplicación de consola
  * - Gestión de Datos: En memoria (no persistente)
- * 
- * @author Tyrone Gabriel Pilay Menendez
+ *
+ * Autor:
+ * ------
+ * @author Tyrone Gabriel Pilay Menéndez
  * @version 1.0
+ *
+ * Nota:
+ * -----
+ * Para más información detallada sobre las clases y sus métodos,
+ * consulte la documentación de cada clase en el código fuente.
+ * Cada método está documentado con su funcionalidad específica,
+ * parámetros y valores de retorno.
  */
-package main.java.com.tyrone.ListarTareasPorConsola.model;
-
-// ...
