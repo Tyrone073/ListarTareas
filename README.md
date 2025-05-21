@@ -14,7 +14,7 @@ Una aplicación de consola para gestionar tareas, desarrollada en Java utilizand
 
 ## Estructura del Proyecto
 
-    ListaTareas/                   - Carpeta raíz del proyecto
+    SistemaDeListaDeTareas/                   - Carpeta raíz del proyecto
     └── src/                       
         └── main/                  
             └── java/              

@@ -4,7 +4,7 @@
  * 
  * Estructura del Proyecto (MVC):
  * ------------------------------
- * ListaTareas/                    - Carpeta raíz del proyecto
+ * SistemaDeListaDeTareas/                    - Carpeta raíz del proyecto
  * └── src/
  *     └── main/
  *         └── java/
