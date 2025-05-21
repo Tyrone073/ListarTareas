@@ -1,11 +1,11 @@
 package main;
 
-import main.java.com.tyrone.ListarTareasPorConsola.view.SistemaDeListasDeTareas;
+import main.java.com.tyrone.ListarTareasPorConsola.view.VistaConsolaSLT;
 
 public class Main {
     public static void main(String[] args) {
 
-        SistemaDeListasDeTareas sistemaDeListasDeTareas = new SistemaDeListasDeTareas();
-        sistemaDeListasDeTareas.ejecutar();
+        VistaConsolaSLT vistaConsolaSLT = new VistaConsolaSLT();
+        vistaConsolaSLT.ejecutar();
     }
 }

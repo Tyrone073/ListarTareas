@@ -6,13 +6,13 @@ import main.java.com.tyrone.ListarTareasPorConsola.model.Tarea;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class SistemaDeListasDeTareas {
+public class VistaConsolaSLT {
 
     private ListaTareas listaTareas = new ListaTareas();
     private Scanner scanner= new Scanner(System.in);
 
     public void ejecutar() {
-        int opcion = 0;
+        int opcion = 5;
         Long idTarea;
 
         do {
@@ -63,7 +63,7 @@ public class SistemaDeListasDeTareas {
                 }
 
             }catch (InputMismatchException e) {
-                System.out.println("❌ Entrada inválida. Usa números del menú.");
+                System.out.println("\u001B[31mEntrada invalida. Usa indices del menu.\u001B[0m");//mensaje q devuelve al atrapar el error y ocupe el \u001B[31m para poner de color rojo las letras y \u001B[0m para resetear ese color
                 scanner.nextLine(); // limpiar buffer
             }
         }while (opcion != 0);
