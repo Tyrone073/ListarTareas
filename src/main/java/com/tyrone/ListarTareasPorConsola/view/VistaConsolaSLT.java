@@ -38,6 +38,7 @@ public class VistaConsolaSLT {
      * Maneja los siguientes casos:
      * - Entrada inválida generada por el usuario.
      * - Operaciones sobre una lista vacía.
+     * - Entrada de Indices fuera del menu.
      *
      * Dependencias:
      * - `listaTareas`: Gestor que almacena y organiza las tareas.
@@ -77,7 +78,6 @@ public class VistaConsolaSLT {
                         System.out.println("Escriba el indice de la tarea: ");
                         idTarea = scanner.nextLong();
                         listaTareas.actualizarEstado(idTarea);
-                        System.out.println("Se acaba de marcar como completa la tarea: \n" + listaTareas.buscarTareaPorId(idTarea));
                     }
 
                 } else if (opcion == 3) {
@@ -92,10 +92,12 @@ public class VistaConsolaSLT {
                     }
                 } else if (opcion == 4) {
                     listaTareas.mostrarTareas();
+                }else if (opcion > 4 || opcion < 0) {
+                    System.out.println("\u001B[31mOpcion inválida. Elija una del menu.\u001B[0m");
                 }
 
             }catch (InputMismatchException e) {
-                System.out.println("\u001B[31mEntrada invalida. Usa indices del menu.\u001B[0m");// Muestra mensaje de error en color rojo usando códigos ANSI (\u001B[31m: iniciiar tod* el mensaje rojo, \u001B[0m: resetear este color para las demas lineas)
+                System.out.println("\u001B[31mEntrada invalida. Elija una opcion del menu.\u001B[0m");// Muestra mensaje de error en color rojo usando códigos ANSI (\u001B[31m: iniciiar tod* el mensaje rojo, \u001B[0m: resetear este color para las demas lineas)
 
                 scanner.nextLine(); // limpiar buffer
             }
