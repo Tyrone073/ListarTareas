@@ -31,7 +31,7 @@ public class Tarea {
      * y la descripción proporcionados.
      */
     public Tarea(String nombre, String descripcion) {
-        this.id = contador++;
+        this.id = contador++ ;
         this.nombre = nombre;
         this.estado = false;
         this.descripcion = descripcion;
@@ -110,6 +110,6 @@ public class Tarea {
      */
     @Override
     public String toString() {
-        return "\n" + id + ". " + nombre + "  |  " + descripcion + "  |  " + (estado ? "Completada" : "Pendiente");
+        return id + ". " + nombre + "  |  " + descripcion + "  |  " + (estado ? "Completada" : "Pendiente");
     }
 }

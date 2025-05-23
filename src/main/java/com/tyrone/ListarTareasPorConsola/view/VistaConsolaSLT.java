@@ -45,20 +45,26 @@ public class VistaConsolaSLT {
      * - `scanner`: Objeto que captura la entrada del usuario mediante la consola.
      */
     public void ejecutar() {
-        int opcion = 5;
+        int opcion = 1;
         Long idTarea;
 
         do {
-            System.out.println("\n1. Agregar tarea");
+            System.out.println("\n=== Menu de opciones ===");
+            System.out.println("1. Agregar tarea");
             System.out.println("2. Marcar tarea como completada");
             System.out.println("3. Eliminar tarea");
             System.out.println("4. Mostrar tareas");
             System.out.println("0. Salir");
             System.out.print("Elige una opción: ");
 
+            /**
+             * Manejo de excepciones para validar entrada numérica del usuario
+             * Captura InputMismatchException cuando se ingresa un valor no numérico
+             * Usado porque la tarea pide que depure errores
+             */
             try {
                 opcion = scanner.nextInt();
-                scanner.nextLine(); // limpiar buffer
+                scanner.nextLine();
 
 
                 if (opcion == 1) {
@@ -92,18 +98,15 @@ public class VistaConsolaSLT {
                     }
                 } else if (opcion == 4) {
                     listaTareas.mostrarTareas();
-                }else if (opcion > 4 || opcion < 0) {
+                }else {
                     System.out.println("\u001B[31mOpcion inválida. Elija una del menu.\u001B[0m");
                 }
 
             }catch (InputMismatchException e) {
                 System.out.println("\u001B[31mEntrada invalida. Elija una opcion del menu.\u001B[0m");// Muestra mensaje de error en color rojo usando códigos ANSI (\u001B[31m: iniciiar tod* el mensaje rojo, \u001B[0m: resetear este color para las demas lineas)
 
-                scanner.nextLine(); // limpiar buffer
+                scanner.nextLine();
             }
         }while (opcion != 0);
     }
-
-
-
 }

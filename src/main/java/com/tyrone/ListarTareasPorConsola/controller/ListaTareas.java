@@ -27,7 +27,7 @@ public class ListaTareas {
       } else {
          for (int i = 0; i < tareas.size(); i++) {
             Tarea t = tareas.get(i);
-            System.out.println(t.getId() + ". " + t.getNombre() + " | " + t.getDescripcion() +" | " + (t.getEstado() ? "Completada" : "Pendiente"));
+            System.out.println(t);
          }
       }
    }
@@ -77,7 +77,7 @@ public class ListaTareas {
 //            t.setEstado(nuevoEstado);
             t.setEstado(true);
             System.out.println("=== El estado de su tarea se actualizo con exito ===\n");
-            System.out.println("Se actualizo el estado de la tarea: " + t );
+            System.out.println("Se actualizo el estado de la tarea: \n" + t );
             return true;
          }
       }
